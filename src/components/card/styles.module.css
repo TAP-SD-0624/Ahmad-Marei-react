@@ -1,0 +1,50 @@
+.noBorder {
+  border: none !important;
+}
+
+.cardCustom {
+  transition: transform 0.3s ease-in-out;
+}
+
+.cardCustom:hover {
+  transform: scale(1.05);
+  cursor: pointer !important;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-img-top {
+  height: 150px !important;
+}
+
+.cardTitle {
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  color: var(--body-text) !important;
+  margin-top: -4px;
+}
+
+.cardSubtitle {
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  color: var(--body-text) !important;
+  margin: 5px 0;
+}
+
+.cardRating ion-icon {
+  color: var(--gold-color);
+}
+
+.cardAuthor {
+  font-size: 14px;
+  font-weight: var(--font-weight-light);
+  color: var(--body-text);
+}
+.image {
+  height: 150px !important;
+}
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%; /* Adjust the width as necessary */
+}

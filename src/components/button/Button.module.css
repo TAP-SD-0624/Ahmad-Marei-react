@@ -1,0 +1,15 @@
+.button {
+  padding: 4px 8px;
+  border: solid var(--lines-color) 1px;
+  border-radius: 4px;
+  background-color: var(--bg-default);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 100;
+  cursor: pointer;
+  color: var(--body-text);
+  font-weight: var(--font-weight-light);
+  font-size: 14px;
+}

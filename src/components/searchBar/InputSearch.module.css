@@ -1,0 +1,13 @@
+.search {
+  width: 75%;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 4px;
+  font-size: 14px;
+  border: none;
+  background-color: var(--bg-default);
+  color: var(--body-text);
+  outline: none;
+}
