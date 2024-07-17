@@ -1,12 +1,13 @@
 import React from "react";
 import Header from "../components/header";
-import MainContent from "../components/home";
+import DetailsContent from "../components/details";
 import classes from "./styles.module.css";
-export default function Home() {
+
+export default function Details() {
   return (
     <div className={classes.view}>
       <Header />
-      <MainContent />
+      <DetailsContent />
     </div>
   );
 }

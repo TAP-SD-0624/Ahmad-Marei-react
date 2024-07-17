@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import SearchBar from "../searchBar";
-import CardsContainer from "../cardsContainer";
 import classes from "./styles.module.css";
 import classNames from "classnames";
-import Loading from "../../shared/LoadingSpinner";
+import { LoadingSpinner, Footer, Card } from "../../shared";
+import { useNavigate } from "react-router-dom";
 
 export default function MainContent() {
+  const navigate = useNavigate();
   const [webTopics, setWebTopics] = useState([]);
   const [filteredWebTopics, setFilteredWebTopics] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -51,6 +52,10 @@ export default function MainContent() {
     fetchWebTopics();
   }, []);
 
+  const getToDetails = (id) => {
+    navigate(`/details/${id}`);
+  };
+
   useEffect(() => {
     let filteredTopics = webTopics;
     if (searchQuery) {
@@ -76,24 +81,45 @@ export default function MainContent() {
   }, [searchQuery, selectedSortOption, selectedFilterOption, webTopics]);
 
   return (
-    <div class={classNames(classes.mainContainer)}>
-      {/* <Loading open={loading} /> */}
-      <div className="container">
-        <SearchBar
-          webTopics={webTopics}
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          selectedSortOption={selectedSortOption}
-          setSelectedSortOption={setSelectedSortOption}
-          selectedFilterOption={selectedFilterOption}
-          setSelectedFilterOption={setSelectedFilterOption}
-          filterOptions={filterOptions}
-        />
-        <p class={classes.numOfCards}>
-          "{filteredWebTopics.length}" Web Topics Found
-        </p>
-        <CardsContainer webTopics={filteredWebTopics} />
+    <>
+      <LoadingSpinner open={loading} />
+      <div class={classNames(classes.mainContainer)}>
+        <div
+          className="container"
+          style={{
+            display: "flex",
+            flex: 1,
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
+          <div>
+            <SearchBar
+              webTopics={webTopics}
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+              selectedSortOption={selectedSortOption}
+              setSelectedSortOption={setSelectedSortOption}
+              selectedFilterOption={selectedFilterOption}
+              setSelectedFilterOption={setSelectedFilterOption}
+              filterOptions={filterOptions}
+            />
+            <p class={classes.numOfCards}>
+              "{filteredWebTopics.length}" Web Topics Found
+            </p>
+            <div class={classes.cardContainer}>
+              {filteredWebTopics.map((topic) => (
+                <Card
+                  key={topic.id}
+                  topic={topic}
+                  onClick={getToDetails.bind(null, topic.id)}
+                />
+              ))}
+            </div>
+          </div>
+          <Footer />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -1,12 +1,13 @@
 import React from "react";
-import Rating from "../rating";
-import classes from "./styles.module.css";
+import Rating from "./Rating";
+import classes from "./Card.module.css";
 import classNames from "classnames";
 
-export default function Card({ topic }) {
+export default function Card({ topic, onClick }) {
   return (
     <div
       class={classNames("card shadow-sm", classes.noBorder, classes.cardCustom)}
+      onClick={onClick}
     >
       <img
         src={`/images/${topic.image}`}

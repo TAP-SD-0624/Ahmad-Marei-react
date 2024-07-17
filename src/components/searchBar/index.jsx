@@ -1,6 +1,5 @@
 import React from "react";
-import InputSearch from "./InputSearch";
-import SelectList from "./SelectList";
+import { InputSearch, SelectList } from "../../shared";
 
 const SearchBar = ({
   searchQuery,

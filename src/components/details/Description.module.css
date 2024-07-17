@@ -1,0 +1,27 @@
+.subtitle {
+  font-size: 12px;
+  font-weight: var(--font-weight-light);
+  color: var(--brand-secondary);
+  margin: 0;
+  margin-top: 10px;
+}
+.title {
+  margin: 0;
+  font-size: 18px;
+  color: var(--detail-text-white);
+}
+
+.rating {
+  font-size: 12px;
+}
+
+.rating ion-icon {
+  color: var(--gold-color);
+}
+
+.description {
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 500px;
+  color: var(--detail-text-white);
+}

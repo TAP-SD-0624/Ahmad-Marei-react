@@ -1,0 +1,20 @@
+.details {
+  position: relative;
+  flex: 1;
+  background: var(--bg-body);
+}
+.detailsDescription {
+  background-color: #333;
+  padding: 16px 0;
+}
+.detailsContainer {
+  max-width: 900px !important;
+  margin: 0 auto;
+}
+.subTopicsContent {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 32px;
+}

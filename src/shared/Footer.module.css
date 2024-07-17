@@ -1,0 +1,9 @@
+.footer {
+  color: var(--body-text);
+  font-size: 14px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
