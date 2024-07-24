@@ -9,9 +9,21 @@ export default function Rating({ rating }) {
 
   return (
     <>
-      {Array(fullStars).fill(<IonIcon icon={star} />)}
-      {Array(halfStars).fill(<IonIcon icon={starHalf} />)}
-      {Array(emptyStars).fill(<IonIcon icon={starOutline} />)}
+      {Array(fullStars)
+        .fill()
+        .map((_, index) => (
+          <IonIcon key={`full-${index}`} icon={star} />
+        ))}
+      {Array(halfStars)
+        .fill()
+        .map((_, index) => (
+          <IonIcon key={`half-${index}`} icon={starHalf} />
+        ))}
+      {Array(emptyStars)
+        .fill()
+        .map((_, index) => (
+          <IonIcon key={`empty-${index}`} icon={starOutline} />
+        ))}
     </>
   );
 }

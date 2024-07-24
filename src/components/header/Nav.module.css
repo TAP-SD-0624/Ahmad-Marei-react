@@ -1,4 +1,13 @@
+.nav {
+  background-color: var(--bg-default);
+}
 .navLogo {
   color: var(--brand-primary);
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .textButton {
+    display: none;
+  }
 }

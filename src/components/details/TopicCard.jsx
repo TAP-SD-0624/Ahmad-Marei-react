@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button } from "../../shared";
 import classes from "./TopicCard.module.css";
 import classNames from "classnames";
 import { heartOutline } from "ionicons/icons";
+import { FavoriteItemsContext } from "../../context/favoriteItems";
 
 export default function TopicCard({ details }) {
+  const { addOrDeleteFromFavorite, favoriteItems } =
+    useContext(FavoriteItemsContext);
   const { image, topic, name } = details;
+  const isItemInFavorite = favoriteItems.find((item) => item.id === details.id);
 
   const buttonStyle = {
     backgroundColor: "var(--brand-secondary)",
@@ -25,30 +29,31 @@ export default function TopicCard({ details }) {
     fontSize: "24px",
   };
   const textStyle = {
-    fontSize: "20px",
+    fontSize: "16px",
     fontWeight: "var(--font-weight-regular)",
   };
 
   return (
-    <div class={classNames(classes.card, "shadow-sm")}>
-      <img class={classes.image} src={`/images/${image}`} alt="" />
-      <p class={classes.author}>
+    <div className={classNames(classes.card, "shadow-sm")}>
+      <img className={classes.image} src={`/images/${image}`} alt="" />
+      <p className={classes.author}>
         <strong>{topic}</strong> by{" "}
-        <a href="#" class={classes.link}>
+        <a href="#" className={classes.link}>
           {name}
         </a>
       </p>
-      <div class={classes.buttonContainer}>
-        <p class={classes.topic}>Interested about this topic?</p>
+      <div className={classes.buttonContainer}>
+        <p className={classes.topic}>Interested about this topic?</p>
         <Button
           endIcon={heartOutline}
           style={buttonStyle}
           iconStyle={iconStyle}
           textStyle={textStyle}
+          onClick={() => addOrDeleteFromFavorite(details)}
         >
-          Add to Favorites
+          {isItemInFavorite ? "Remove from Favorites" : "Add to Favorites"}
         </Button>
-        <p class={classes.credits}>Unlimited Credits</p>
+        <p className={classes.credits}>Unlimited Credits</p>
       </div>
     </div>
   );

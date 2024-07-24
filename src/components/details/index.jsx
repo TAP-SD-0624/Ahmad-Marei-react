@@ -25,7 +25,6 @@ export default function DetailsContent() {
         }
         const data = await response.json();
         setDetails(data);
-        console.log(data);
       } catch (error) {
         setError(error);
       } finally {
@@ -33,14 +32,14 @@ export default function DetailsContent() {
       }
     };
     fetchWebTopics();
-  }, []);
+  }, [id]);
   return (
     <>
       <LoadingSpinner open={loading} />
       {details && (
         <div className={classes.details}>
           <div className={classes.detailsDescription}>
-            <div class={classNames(classes.detailsContainer, "container")}>
+            <div className={classNames(classes.detailsContainer, "container")}>
               <Description details={details} />
               <TopicCard details={details} />
             </div>

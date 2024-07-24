@@ -16,3 +16,10 @@
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 24px;
 }
+
+@media only screen and (max-width: 768px) {
+  .numOfCards {
+    font-size: 18px;
+    padding: 0;
+  }
+}

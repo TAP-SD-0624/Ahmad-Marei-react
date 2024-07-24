@@ -1,0 +1,12 @@
+.searchBar {
+  background-color: var(--bg-default) !important;
+}
+@media only screen and (max-width: 768px) {
+  .searchBar {
+    flex-direction: column;
+    padding: 0;
+  }
+  .lists {
+    width: 100%;
+  }
+}

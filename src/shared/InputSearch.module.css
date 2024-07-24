@@ -11,3 +11,12 @@
   color: var(--body-text);
   outline: none;
 }
+
+@media only screen and (max-width: 768px) {
+  .search {
+    width: 100%;
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--lines-color);
+    box-sizing: border-box;
+  }
+}

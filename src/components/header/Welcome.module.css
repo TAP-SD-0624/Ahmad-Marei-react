@@ -43,7 +43,7 @@
     transform-origin: bottom right; */
 }
 
-.content h2 {
+.content h3 {
   font-size: 24px;
   font-weight: var(--font-weight-bold);
   color: var(--brand-secondary);
@@ -58,4 +58,37 @@
   color: var(--body-text);
   z-index: 100;
   line-height: 16px !important;
+}
+
+.navLogo {
+  color: var(--brand-primary);
+  cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+  .content {
+    transform: translateX(0%);
+  }
+
+  .section::after {
+    height: 30px;
+  }
+
+  .section::before {
+    height: 30px;
+  }
+
+  .content h3 {
+    font-size: 16px;
+    font-weight: var(--font-weight-bold);
+    color: var(--brand-secondary);
+  }
+
+  .content p {
+    font-size: 12px;
+    max-width: 90%;
+  }
+
+  .background {
+    padding-top: 32px;
+  }
 }

@@ -6,17 +6,17 @@ import { searchOutline } from "ionicons/icons";
 export default function InputSearch({ onChange, value }) {
   return (
     <div
-      class={classNames(
+      className={classNames(
         classes.search,
         "d-flex gap-1 d-flex align-items-center ps-3"
       )}
     >
-      <ion-icon icon={searchOutline} class={classes.searchIcon}></ion-icon>
+      <ion-icon icon={searchOutline} className={classes.searchIcon}></ion-icon>
       <input
         type="text"
         id="search"
         placeholder="Search for a topic..."
-        class={classes.searchInput}
+        className={classes.searchInput}
         value={value}
         onChange={onChange}
       />

@@ -1,8 +1,20 @@
 import React from "react";
 import classes from "./SelectList.module.css";
-export default function SelectList({ label, options, value, onChange }) {
+import classNames from "classnames";
+import { ClassNames } from "@emotion/react";
+export default function SelectList({
+  label,
+  options,
+  value,
+  onChange,
+  noBorderLeft,
+}) {
   return (
-    <div class={classes.container}>
+    <div
+      className={classNames(classes.container, {
+        [classes.noBorderLeft]: noBorderLeft,
+      })}
+    >
       <label htmlFor="sort-by" className={classes.label}>
         {label}
       </label>

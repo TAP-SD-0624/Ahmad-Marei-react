@@ -5,7 +5,7 @@ import classes from "./Footer.module.css";
 
 export default function Footer() {
   return (
-    <footer class={classes.footer}>
+    <footer className={classes.footer}>
       Developed with
       <IonIcon
         icon={heart}

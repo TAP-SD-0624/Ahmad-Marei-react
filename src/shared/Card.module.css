@@ -4,6 +4,7 @@
 
 .cardCustom {
   transition: transform 0.3s ease-in-out;
+  background-color: var(--bg-default);
 }
 
 .cardCustom:hover {
@@ -22,6 +23,9 @@
   color: var(--body-text) !important;
   margin-top: -4px;
 }
+.isFavorite .cardTitle {
+  margin: 0px !important;
+}
 
 .cardSubtitle {
   font-size: 14px;
@@ -33,7 +37,9 @@
 .cardRating ion-icon {
   color: var(--gold-color);
 }
-
+.isFavorite .cardRating {
+  margin-top: 8px !important;
+}
 .cardAuthor {
   font-size: 14px;
   font-weight: var(--font-weight-light);
@@ -42,9 +48,22 @@
 .image {
   height: 150px !important;
 }
+.isFavorite .image {
+  height: 80px !important;
+}
 .truncate {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 100%; /* Adjust the width as necessary */
+  width: 100%;
+}
+
+.card__favorite .card-img-top {
+  height: 80px !important;
+}
+.card__favorite.card-title {
+  margin: 0;
+}
+.card__favorite .card-rating {
+  margin-top: 0px;
 }

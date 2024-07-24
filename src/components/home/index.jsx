@@ -72,18 +72,19 @@ export default function MainContent() {
       filteredTopics = filteredTopics.sort((a, b) =>
         a.topic.localeCompare(b.topic)
       );
-    } else if (selectedSortOption === "author") {
+    }
+    if (selectedSortOption === "author") {
       filteredTopics = filteredTopics.sort((a, b) =>
         a.name.localeCompare(b.name)
       );
     }
     setFilteredWebTopics(filteredTopics);
   }, [searchQuery, selectedSortOption, selectedFilterOption, webTopics]);
-
+  console.log("filteredWebTopics", selectedFilterOption);
   return (
     <>
       <LoadingSpinner open={loading} />
-      <div class={classNames(classes.mainContainer)}>
+      <div className={classNames(classes.mainContainer)}>
         <div
           className="container"
           style={{
@@ -104,10 +105,10 @@ export default function MainContent() {
               setSelectedFilterOption={setSelectedFilterOption}
               filterOptions={filterOptions}
             />
-            <p class={classes.numOfCards}>
+            <p className={classes.numOfCards}>
               "{filteredWebTopics.length}" Web Topics Found
             </p>
-            <div class={classes.cardContainer}>
+            <div className={classes.cardContainer}>
               {filteredWebTopics.map((topic) => (
                 <Card
                   key={topic.id}

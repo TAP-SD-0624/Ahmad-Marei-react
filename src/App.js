@@ -1,16 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Details from "./pages/Details";
+import AppRoutes from "./routes/AppRoutes";
+import FavoriteItemsProvider from "./context/favoriteItems";
+import Layout from "./layout";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/details/:id" element={<Details />} />
-      </Routes>
-    </Router>
+    <FavoriteItemsProvider>
+      <Router>
+        <Layout>
+          <AppRoutes />
+        </Layout>
+      </Router>
+    </FavoriteItemsProvider>
   );
 }
 
